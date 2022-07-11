@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowswerRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
+import { HashRouter, Route } from 'react-router-dom';
 import Nav from '../Nav';
 import About from '../About';
 import Portfolio from '../Portfolio';
@@ -7,19 +7,15 @@ import Contact from '../Contact';
 
 function Header() {
     return(
-        <Router>
+        <HashRouter>
             <Nav />
-            <Switch>
-                <Route exact path="/">
-                    <Redirect to="/about"/>
-                </Route>
-                <Route path="/about">
-                    <About />
-                </Route>
-                <Route path="/portfolio" component={Portfolio} />
+            <div className="content">
+                <Route exact path="/" render={() => (<Route to="/portfolio"/>)}/> 
+                <Route path="/portfolio" component={Portfolio}/>
+                <Route path="/about" component={About} />
                 <Route path="/contact" component={Contact} />
-            </Switch>
-        </Router>
+            </div>
+        </HashRouter>
     )
 }
 
