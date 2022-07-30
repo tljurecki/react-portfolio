@@ -32,18 +32,18 @@ function Contact() {
 
     return (
         <section>
-            <h1 className="contact">Contact Me</h1>
-            <form id="contact-form" onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="name">Name:</label>
+            <h1 className="contact text-info">Contact Me</h1>
+            <form className="text-info" id="contact-form" onSubmit={handleSubmit}>
+                <div className="row mb-3">
+                    <label htmlFor="name" className="col-sm-2 col-form-label">Name:</label>
                     <input type="text" name="name"  defaultValue={name} onBlur={handleChange} />
                 </div>
-                <div>
-                    <label htmlFor="email">Email Address:</label>
+                <div className="row mb-3">
+                    <label htmlFor="email" className="col-sm-12 col-form-label">Email Address:</label>
                     <input type="email" name="email" defaultValue={email} onBlur={handleChange} />
                 </div>
-                <div>
-                    <label htmlFor="message">Message:</label>
+                <div className="row mb-3">
+                    <label htmlFor="message" className="col-sm-12 col-form-label">Message:</label>
                     <textarea name="message" rows="4" defaultValue={message} onBlur={handleChange} />
                 </div>
                 {errorMessage && (

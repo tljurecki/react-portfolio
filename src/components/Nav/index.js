@@ -1,32 +1,17 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Nav() {
     return(
-        <div className="nav">
+        <nav className="navbar">
             <div className="nav-left">
-                <NavLink
-                activeClassName="nav_link--active"
-                className="nav_link"
-                to="/about">
-                    ABOUT
-                </NavLink>
-            </div> 
-            <div className='nav-right'>
-                <NavLink 
-                activeClassName="nav_link--active"
-                className="nav_link"
-                to="/portforlio">
-                    PORTFOLIO
-                </NavLink>
-                <NavLink 
-                activeClassName="nav_link--active"
-                className="nav_link"
-                to="/contact">
-                    CONTACT
-                </NavLink>
+              <a href="#about" className="mr-5">About</a>
+              <br></br>
+              <a href="#portfolio" className="mr-5">Portfolio</a>
+              <br></br>
+              <a href="#contact" className="mr-5">Contact</a>  
             </div>
-        </div>
+        </nav>
     )
 }
 
